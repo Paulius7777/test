@@ -10,9 +10,21 @@ import java.security.NoSuchAlgorithmException;
 public class TestOne{
     public static void main(String[] args) throws UnsupportedEncodingException,
             NoSuchAlgorithmException {
-        byte[] theTextToDigestAsBytes=
-                "Mano gyvenimas yra labai geras ..."
-                        .getBytes("8859_1");
+    	getHach("Vardas");
+//        byte[] theTextToDigestAsBytes=
+//                "Mano gyvenimas yra labai geras ..."
+//                        .getBytes("8859_1");
+//        MessageDigest md= MessageDigest.getInstance("MD5");
+//        md.update(theTextToDigestAsBytes);
+//        byte[] digest= md.digest();
+//
+//        for(byte b: digest){
+//            System.out.printf("%02X", b & 0xff);
+//        }
+//        System.out.println();
+    }
+    public satic getHach(String str){
+    	byte[] theTextToDigestAsBytes=str.getBytes("8859_1");
         MessageDigest md= MessageDigest.getInstance("MD5");
         md.update(theTextToDigestAsBytes);
         byte[] digest= md.digest();
@@ -20,6 +32,5 @@ public class TestOne{
         for(byte b: digest){
             System.out.printf("%02X", b & 0xff);
         }
-        System.out.println();
     }
 }
